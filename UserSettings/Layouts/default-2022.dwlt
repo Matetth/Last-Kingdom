@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 44085
+  controlID: 40
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 44018
+  controlID: 41
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 44019
+  controlID: 42
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -273,8 +273,8 @@ MonoBehaviour:
     y: 0
     width: 378.40002
     height: 722.8
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -417,9 +417,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 92b6feff
-      m_LastClickedID: -84334
-      m_ExpandedIDs: 92b6feff9ab6feffe6b6feffca01ffff7437ffffa25dffff4665ffff4285fffff291ffff4092ffff54f4ffff64fafffffefaffffceba000038a10100
+      m_SelectedIDs: 88630000
+      m_LastClickedID: 25480
+      m_ExpandedIDs: fefaffff80660000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -812,9 +812,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 415.4385, y: 131.54741, z: -1.2302991}
+    m_Target: {x: 434.17966, y: 176.94765, z: -2.8268952}
     speed: 2
-    m_Value: {x: 415.4385, y: 131.54741, z: -1.2302991}
+    m_Value: {x: 425.43835, y: 176.45721, z: -2.676015}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -864,9 +864,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 194.86824
+    m_Target: 350.38013
     speed: 2
-    m_Value: 194.86824
+    m_Value: 335.292
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -936,7 +936,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -944,16 +944,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Unity\Last Kingdom
+  m_LastProjectPath: C:\Users\HP\Documents\GitHub\Last-Kingdom
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 56780000
-    m_LastClickedID: 30806
-    m_ExpandedIDs: 00000000186a000000ca9a3b
+    m_SelectedIDs: b06a0000
+    m_LastClickedID: 27312
+    m_ExpandedIDs: 00000000966a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -981,7 +981,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000186a000000ca9a3b
+    m_ExpandedIDs: 00000000966a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
