@@ -1,12 +1,12 @@
-using System;
 using UnityEngine;
+using System;
 using UnityEngine.EventSystems;
 
 public class Map_Builder : MonoBehaviour
 {
     public Camera mainCamera;
 
-    public int [,] Tiles;
+    public int[,] Tiles = new int[21, 21];
     public GameObject Desert_tile;
     public GameObject Grass_tile;
     public GameObject Water_tile;
@@ -23,7 +23,7 @@ public class Map_Builder : MonoBehaviour
 
     private void Start()
     {
-        Tiles = new int[21, 21];
+        //Tiles = new int[21, 21];
         for (int i = 9; i < 12; i++)
         {
             for (int j = 9; j < 12; j++)
@@ -54,6 +54,7 @@ public class Map_Builder : MonoBehaviour
                     remaining_tiles--;
                     Desert_Selected = false;
                     Tiles[x_position, y_position] = 1;
+                    Debug.Log(x_position + " " + y_position);
                 }
                 else if (Grass_Selected == true)
                 {
@@ -61,6 +62,7 @@ public class Map_Builder : MonoBehaviour
                     remaining_tiles--;
                     Grass_Selected = false;
                     Tiles[x_position, y_position] = 2;
+                    Debug.Log(x_position + " " + y_position);
                 }
                 else if (Water_Selected == true)
                 {
@@ -68,6 +70,7 @@ public class Map_Builder : MonoBehaviour
                     remaining_tiles--;
                     Water_Selected = false;
                     Tiles[x_position, y_position] = 3;
+                    Debug.Log(x_position + " " + y_position);
                 }
             }
         }
