@@ -575,13 +575,19 @@ MonoBehaviour:
   Desert_tile: {fileID: 6926056102487359484, guid: 9ef7f2a5877100f4093a49e1edcc4d22, type: 3}
   Grass_tile: {fileID: 6926056102487359484, guid: 3ca7c36a88638ec4ba6c925f3a5e260b, type: 3}
   Water_tile: {fileID: 6926056102487359484, guid: ee7b89f6223f59f499b2e5bbf8c87e35, type: 3}
-  x_position: 0
-  y_position: 0
-  remaining_tiles: 0
+  WheatField_building: {fileID: 7271305026431215831, guid: 0fa978c92a9bd5946a685305c3bae0ac, type: 3}
+  Windmill_building: {fileID: 5259046010034547670, guid: 85b62a6fae7e9e64d97049393bea2593, type: 3}
+  Barn_building: {fileID: 2967598326363424244, guid: 067f385e69b780a419756f95d60a7bc6, type: 3}
+  Fish_building: {fileID: 3428892604715912545, guid: eb416a188fea5ce44b917ba02abf45fe, type: 3}
+  Tiles_UI: {fileID: 448921943}
+  Buildings_UI: {fileID: 1361729756}
   Desert_Selected: 0
   Grass_Selected: 0
   Water_Selected: 0
-  Placer: {x: 0, y: 0}
+  WheatField_Selected: 0
+  Windmill_Selected: 0
+  Barn_Selected: 0
+  Fish_Selected: 0
 --- !u!1 &271143482
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,8 +672,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 186270622}
-        m_TargetAssemblyTypeName: Base_Map_Builder, Assembly-CSharp
-        m_MethodName: SelectWater
+        m_TargetAssemblyTypeName: Tiles_Builder, Assembly-CSharp
+        m_MethodName: SelectFish
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1092,8 +1098,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 186270622}
-        m_TargetAssemblyTypeName: Base_Map_Builder, Assembly-CSharp
-        m_MethodName: SelectGrass
+        m_TargetAssemblyTypeName: Tiles_Builder, Assembly-CSharp
+        m_MethodName: SelectWindmill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1332,6 +1338,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726611108}
   m_CullTransparentMesh: 1
+--- !u!1 &836541415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 836541416}
+  - component: {fileID: 836541418}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &836541416
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836541415}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 872.90173, y: 448.8116, z: -9.545459}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &836541418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836541415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ad348efcba22642a41acd0167f2302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phasecounter: 0
 --- !u!1001 &930292124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1482,8 +1533,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 186270622}
-        m_TargetAssemblyTypeName: Base_Map_Builder, Assembly-CSharp
-        m_MethodName: SelectDesert
+        m_TargetAssemblyTypeName: Tiles_Builder, Assembly-CSharp
+        m_MethodName: SelectWheatField
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3190,8 +3241,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 186270622}
-        m_TargetAssemblyTypeName: Base_Map_Builder, Assembly-CSharp
-        m_MethodName: SelectWater
+        m_TargetAssemblyTypeName: Tiles_Builder, Assembly-CSharp
+        m_MethodName: SelectBarn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3248,3 +3299,4 @@ SceneRoots:
   - {fileID: 1454635556}
   - {fileID: 186270621}
   - {fileID: 550533066}
+  - {fileID: 836541416}

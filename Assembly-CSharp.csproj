@@ -62,7 +62,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Main Phases.cs" />
     <Compile Include="Assets\Scripts\Start Menu Script.cs" />
-    <Compile Include="Assets\Scripts\Map Builder.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Tiles Builder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
