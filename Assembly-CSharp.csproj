@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Main Phases.cs" />
+    <Compile Include="Assets\Scripts\Income.cs" />
     <Compile Include="Assets\Scripts\Start Menu Script.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Tiles Builder.cs" />
