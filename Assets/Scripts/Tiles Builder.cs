@@ -41,10 +41,10 @@ public class Tiles_Builder : MonoBehaviour
         {
             for (int j = 9; j < 12; j++)
             {
-                Tiles[i, j] = 2;
+                Tiles[i, j] = 2; //A füves csempék kódja a 2-es
             }
         }
-        Tiles[10, 10] = 100; // Ez fixen a város (100-as kód)
+        Tiles[10, 10] = 100; // Ez a város (100-as kód)
     }
 
     void Update()

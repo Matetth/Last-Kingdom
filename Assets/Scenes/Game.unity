@@ -563,7 +563,7 @@ MonoBehaviour:
   population_income_text: {fileID: 1147774886}
   food_count: 0
   population_count: 0
-  food_income: 0
+  food_income: -10
   population_income: 0
 --- !u!4 &129527614
 Transform:
@@ -4094,7 +4094,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +5
+  m_text: +1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 903be86707e16cf458ed13f250acd8b8, type: 2}
   m_sharedMaterial: {fileID: -3192267726979101285, guid: 903be86707e16cf458ed13f250acd8b8, type: 2}
