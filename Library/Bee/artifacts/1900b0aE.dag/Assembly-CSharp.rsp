@@ -378,6 +378,10 @@
 "Assets/Scripts/Income.cs"
 "Assets/Scripts/Main Phases.cs"
 "Assets/Scripts/Start Menu Script.cs"
+"Assets/Scripts/Tile Scripts/Barn.cs"
+"Assets/Scripts/Tile Scripts/Houses.cs"
+"Assets/Scripts/Tile Scripts/Wheat field.cs"
+"Assets/Scripts/Tile Scripts/Windmill.cs"
 "Assets/Scripts/Tiles Builder.cs"
 -langversion:9.0
 /deterministic

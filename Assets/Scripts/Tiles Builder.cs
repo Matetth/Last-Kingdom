@@ -6,7 +6,7 @@ public class Tiles_Builder : MonoBehaviour
 {
     public Camera mainCamera;
 
-    private int[,] Tiles = new int[21, 21];
+    public int[,] Tiles = new int[21, 21];
 
     public GameObject Desert_tile;
     public GameObject Grass_tile;
@@ -15,6 +15,7 @@ public class Tiles_Builder : MonoBehaviour
     public GameObject Windmill_building;
     public GameObject Barn_building;
     public GameObject Fish_building;
+    public GameObject Houses_building;
 
     public GameObject Tiles_UI;
     public GameObject Buildings_UI;
@@ -32,6 +33,7 @@ public class Tiles_Builder : MonoBehaviour
     public bool Windmill_Selected = false;
     public bool Barn_Selected = false;
     public bool Fish_Selected = false;
+    public bool Houses_Selected = false;
 
     private Vector2 Placer;
 
@@ -61,7 +63,6 @@ public class Tiles_Builder : MonoBehaviour
 
             TileDecider();
         }
-        
     }
 
     public void TileDecider()
@@ -86,11 +87,6 @@ public class Tiles_Builder : MonoBehaviour
                     remaining_tiles--;
                 }
             }
-            else if (remaining_tiles == 0)
-            {
-                Tiles_UI.SetActive(false);
-                Buildings_UI.SetActive(true);
-            }
 
             if(remaining_tiles == 0 && Tiles[x_position, y_position] == 2)
             {
@@ -105,6 +101,10 @@ public class Tiles_Builder : MonoBehaviour
                 else if (Barn_Selected == true)
                 {
                     PlaceTile(Barn_building, 13, ref Barn_Selected, x_position, y_position);
+                }
+                else if (Houses_Selected == true)
+                {
+                    PlaceTile(Houses_building, 14, ref Houses_Selected, x_position, y_position);
                 }
             }
 
@@ -141,7 +141,7 @@ public class Tiles_Builder : MonoBehaviour
         }
     }
 
-    void SelectTileType(ref bool selectedTile, ref bool otherTile1, ref bool otherTile2, ref bool otherTile3)
+    void SelectTileType(ref bool selectedTile, ref bool otherTile1, ref bool otherTile2, ref bool otherTile3, ref bool otherTile4)
     {
         if (selectedTile == true)
         {
@@ -153,6 +153,7 @@ public class Tiles_Builder : MonoBehaviour
             otherTile1 = false;
             otherTile2 = false;
             otherTile3 = false;
+            otherTile4 = false;
         }
     }
 
@@ -173,21 +174,41 @@ public class Tiles_Builder : MonoBehaviour
 
     public void SelectWheatField()
     {
-        SelectTileType(ref WheatField_Selected, ref Windmill_Selected, ref Barn_Selected, ref Fish_Selected);
+        SelectTileType(ref WheatField_Selected, ref Windmill_Selected, ref Barn_Selected, ref Fish_Selected, ref Houses_Selected);
     }
 
     public void SelectWindmill()
     {
-        SelectTileType(ref Windmill_Selected, ref WheatField_Selected, ref Barn_Selected, ref Fish_Selected);
+        SelectTileType(ref Windmill_Selected, ref WheatField_Selected, ref Barn_Selected, ref Fish_Selected, ref Houses_Selected);
     }
 
     public void SelectBarn()
     {
-        SelectTileType(ref Barn_Selected, ref WheatField_Selected, ref Windmill_Selected, ref Fish_Selected);
+        SelectTileType(ref Barn_Selected, ref WheatField_Selected, ref Windmill_Selected, ref Fish_Selected, ref Houses_Selected);
     }
 
     public void SelectFish()
     {
-        SelectTileType(ref Fish_Selected, ref WheatField_Selected, ref Windmill_Selected, ref Barn_Selected);
+        SelectTileType(ref Fish_Selected, ref WheatField_Selected, ref Windmill_Selected, ref Barn_Selected, ref Houses_Selected);
+    }
+
+    public void SelectHouses()
+    {
+        SelectTileType(ref Houses_Selected, ref WheatField_Selected, ref Windmill_Selected, ref Barn_Selected, ref Fish_Selected);
+    }
+
+    public void NextButton()
+    {
+        if(remaining_tiles != 0)
+        {
+            remaining_tiles = 0;
+            Tiles_UI.SetActive(false);
+            Buildings_UI.SetActive(true);
+        }
+        else if (remaining_tiles == 0)
+        {
+            Buildings_UI.SetActive(false);
+            GameManager.Instance.phasecounter++;
+        }
     }
 }

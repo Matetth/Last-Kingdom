@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3703862903243597444}
   - component: {fileID: 7400830938165081047}
+  - component: {fileID: -3033070513201165012}
   m_Layer: 0
   m_Name: Wheat Field
   m_TagString: Untagged
@@ -84,3 +85,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-3033070513201165012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7271305026431215831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0aedd4e678ad044a864bfec312ba4ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
