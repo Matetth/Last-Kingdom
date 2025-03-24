@@ -1,41 +1,50 @@
 using UnityEngine;
 
-public class Windmill : MonoBehaviour
+public class Windmill : BuildingEffect
 {
-    public Tiles_Builder tilesBuilder;
-    void Start()
+    private Tiles_Builder tilesBuilder;
+
+    protected override void OnEnable()
     {
-        tilesBuilder = FindObjectOfType<Tiles_Builder>();
+        base.OnEnable();
+        tilesBuilder = FindObjectOfType<Tiles_Builder>();  // Keresd meg a Tiles_Builder példányt a jelenetben
+        CheckSurroundingTiles();
+    }
 
-        Vector2 windmill_position = transform.position;
-
-        int x_position = Mathf.FloorToInt(windmill_position.x);
-        int y_position = Mathf.FloorToInt(windmill_position.y);
-
+    // Ez a metódus végigmegy az összes szomszédos mezõn, és ha WheatFieldet talál, bónuszt ad
+    private void CheckSurroundingTiles()
+    {
+        // Iterálunk a 3x3-as területen, ahol a Windmill található
+        int xPos = Mathf.FloorToInt(transform.position.x);
+        int yPos = Mathf.FloorToInt(transform.position.y);
 
         for (int i = -1; i <= 1; i++)
         {
             for (int j = -1; j <= 1; j++)
             {
-                
-                if (i == 0 && j == 0)
-                continue;
+                int checkX = xPos + i;
+                int checkY = yPos + j;
 
-                int neighbourX = x_position + i;
-                int neighbourY = y_position + j;
-
-                if (neighbourX >= 0 && neighbourX < tilesBuilder.Tiles.GetLength(0) && neighbourY >= 0 && neighbourY < tilesBuilder.Tiles.GetLength(1))
+                if (checkX >= 0 && checkX < tilesBuilder.Tiles.GetLength(0) && checkY >= 0 && checkY < tilesBuilder.Tiles.GetLength(1))
                 {
-                    int tileValue = tilesBuilder.Tiles[neighbourX, neighbourY];
-
-                    if (tileValue == 11)
+                    int tileType = tilesBuilder.Tiles[checkX, checkY];
+                    if (tileType == (int)TileType.WheatField)
                     {
-                        Debug.Log($"A {neighbourX},{neighbourY} pozíción WheatField van.");
-
+                        // Bónuszt adunk, ha WheatFieldet találunk
+                        Debug.Log($"Kezdeti WheatField-t talált a {checkX},{checkY} pozíción!");
                         Income.Instance.food_income += 1;
                     }
                 }
             }
+        }
+    }
+
+    protected override void CheckNewTile(int x, int y, int tileType)
+    {
+        if (tileType == (int)TileType.WheatField && IsNeighbour(x, y))
+        {
+            Debug.Log($"Új WheatField a {x},{y} pozíción, bónuszt kapsz!");
+            Income.Instance.food_income += 1;
         }
     }
 }
