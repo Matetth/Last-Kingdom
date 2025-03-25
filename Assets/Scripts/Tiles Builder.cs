@@ -10,11 +10,18 @@ public enum TileType
     Desert = 1,
     Grass = 2,
     Water = 3,
-    WheatField = 11,  // Ellenõrizd, hogy a WheatField értéke valóban 11
-    Windmill = 12,
-    Barn = 13,
-    Fish = 14,
-    Houses = 15
+    Houses = 11,
+    Bank = 12,
+    WheatField = 21,
+    Windmill = 22,
+    Barn = 23,
+    Forest = 31,
+    Sawmill = 32,
+    GoldMine = 41,
+    Furnace = 42,
+    Fish = 51,
+    Fishery = 52,
+    LookoutTower = 99,
 }
 
 
@@ -28,7 +35,7 @@ public class Tiles_Builder : MonoBehaviour
     public TMPro.TMP_Text Tiles_Left;
 
     public GameObject Desert_tile, Grass_tile, Water_tile;
-    public GameObject WheatField_building, Windmill_building, Barn_building, Fish_building, Houses_building;
+    public GameObject Houses, Bank, WheatField, Windmill, Barn, Forest, Sawmill, GoldMine, Furnace, LookoutTower, Fish, Fishery;
     public GameObject Tiles_UI, Buildings_UI, Tiles_Left_UI;
 
     private int x_position, y_position;
@@ -46,11 +53,18 @@ public class Tiles_Builder : MonoBehaviour
             { TileType.Desert, Desert_tile },
             { TileType.Grass, Grass_tile },
             { TileType.Water, Water_tile },
-            { TileType.WheatField, WheatField_building },
-            { TileType.Windmill, Windmill_building },
-            { TileType.Barn, Barn_building },
-            { TileType.Fish, Fish_building },
-            { TileType.Houses, Houses_building }
+            { TileType.Houses, Houses },
+            { TileType.WheatField, WheatField },
+            { TileType.Windmill, Windmill },
+            { TileType.Barn, Barn },
+            { TileType.Forest, Forest },
+            { TileType.Sawmill, Sawmill },
+            { TileType.GoldMine, GoldMine },
+            { TileType.Furnace, Furnace },
+            { TileType.Bank, Bank },
+            { TileType.Fish, Fish },
+            { TileType.Fishery, Fishery },
+            { TileType.LookoutTower, LookoutTower }
         };
 
         for (int i = 9; i < 12; i++)
@@ -92,15 +106,23 @@ public class Tiles_Builder : MonoBehaviour
         }
         else if (remaining_tiles == 0)
         {
-            if ((selectedTile == TileType.WheatField || selectedTile == TileType.Windmill || selectedTile == TileType.Barn || selectedTile == TileType.Houses) && Tiles[x_position, y_position] == (int)TileType.Grass)
+            if ((selectedTile == TileType.LookoutTower || selectedTile == TileType.Houses || selectedTile == TileType.Bank || selectedTile == TileType.WheatField ||
+                selectedTile == TileType.Windmill || selectedTile == TileType.Barn || selectedTile == TileType.Forest || selectedTile == TileType.Sawmill)
+                && Tiles[x_position, y_position] == (int)TileType.Grass)
             {
                 PlaceTile(tilePrefabs[selectedTile], (int)selectedTile);
             }
-            else if (selectedTile == TileType.Fish && Tiles[x_position, y_position] == (int)TileType.Water)
+
+            else if ((selectedTile == TileType.Fish || selectedTile == TileType.Fishery) && Tiles[x_position, y_position] == (int)TileType.Water)
+            {
+                PlaceTile(tilePrefabs[selectedTile], (int)selectedTile);
+            }
+            else if ((selectedTile == TileType.LookoutTower || selectedTile == TileType.GoldMine || selectedTile == TileType.Furnace) && Tiles[x_position, y_position] == (int)TileType.Desert)
             {
                 PlaceTile(tilePrefabs[selectedTile], (int)selectedTile);
             }
         }
+
     }
 
     private void PlaceTile(GameObject tilePrefab, int tileType)
@@ -123,11 +145,18 @@ public class Tiles_Builder : MonoBehaviour
     public void SelectDesert() => SelectTile(TileType.Desert);
     public void SelectGrass() => SelectTile(TileType.Grass);
     public void SelectWater() => SelectTile(TileType.Water);
+    public void SelectHouses() => SelectTile(TileType.Houses);
+    public void SelectBank() => SelectTile(TileType.Bank);
     public void SelectWheatField() => SelectTile(TileType.WheatField);
     public void SelectWindmill() => SelectTile(TileType.Windmill);
     public void SelectBarn() => SelectTile(TileType.Barn);
+    public void SelectForest() => SelectTile(TileType.Forest);
+    public void SelectSawmill() => SelectTile(TileType.Sawmill);
+    public void SelectGoldMine() => SelectTile(TileType.GoldMine);
+    public void SelectFurnace() => SelectTile(TileType.Furnace);
     public void SelectFish() => SelectTile(TileType.Fish);
-    public void SelectHouses() => SelectTile(TileType.Houses);
+    public void SelectFishery() => SelectTile(TileType.Fishery);
+    public void SelectLookoutTower() => SelectTile(TileType.LookoutTower);
 
     public void NextButton()
     {
